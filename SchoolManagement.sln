@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolManagement.API", "SchoolManagement.API\SchoolManagement.API.csproj", "{FA9410EA-499D-4A35-8895-A88C4C26260B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolManagement.Application", "SchoolManagement.Application\SchoolManagement.Application.csproj", "{26283D86-DD16-4AA2-99CC-CC5F9E17C2A7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolManagement.Infrastructure", "SchoolManagement.Infrastructure\SchoolManagement.Infrastructure.csproj", "{14CDB11E-5E89-4B10-9642-469F3BE59B47}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FA9410EA-499D-4A35-8895-A88C4C26260B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA9410EA-499D-4A35-8895-A88C4C26260B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA9410EA-499D-4A35-8895-A88C4C26260B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA9410EA-499D-4A35-8895-A88C4C26260B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26283D86-DD16-4AA2-99CC-CC5F9E17C2A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26283D86-DD16-4AA2-99CC-CC5F9E17C2A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26283D86-DD16-4AA2-99CC-CC5F9E17C2A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26283D86-DD16-4AA2-99CC-CC5F9E17C2A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14CDB11E-5E89-4B10-9642-469F3BE59B47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14CDB11E-5E89-4B10-9642-469F3BE59B47}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14CDB11E-5E89-4B10-9642-469F3BE59B47}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14CDB11E-5E89-4B10-9642-469F3BE59B47}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
