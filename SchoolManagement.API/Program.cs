@@ -22,4 +22,7 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 app.MapControllers();
 
+app.MapGet("/", () => "API działa");
+
 app.Run();
+
