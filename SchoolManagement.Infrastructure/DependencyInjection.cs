@@ -1,7 +1,9 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using SchoolManagement.Application.Common.Interfaces.Persistence;
 using SchoolManagement.Infrastructure.Persistence;
+using SchoolManagement.Infrastructure.Persistence.Repositories;
 
 namespace SchoolManagement.Infrastructure;
 
@@ -11,6 +13,8 @@ public static class DependencyInjection
     {
         services.AddDbContext<SchoolDbContext>(options => options.UseNpgsql(configuration.GetConnectionString("DefaultConnection")));
 
+        services.AddScoped<IStudentRepository, StudentRepository>();
+        services.AddScoped<ITeacherRepository, TeacherRepository>();
         return services;
     }
 }
