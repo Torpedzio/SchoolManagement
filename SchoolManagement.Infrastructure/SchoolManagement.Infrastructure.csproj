@@ -4,10 +4,13 @@
         <TargetFramework>net8.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
-    </PropertyGroup>
+        <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+      <UserSecretsId>f23ae2a0-79a1-4ca3-b687-ba5a4fbed467</UserSecretsId>
+  </PropertyGroup>
 
     <ItemGroup>
       <ProjectReference Include="..\SchoolManagement.Application\SchoolManagement.Application.csproj" />
+      <ProjectReference Include="..\SchoolManagement.Domain\SchoolManagement.Domain.csproj" />
     </ItemGroup>
 
     <ItemGroup>
@@ -20,6 +23,10 @@
         <PrivateAssets>all</PrivateAssets>
         <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       </PackageReference>
+      <PackageReference Include="Microsoft.Extensions.Configuration.EnvironmentVariables" Version="9.0.13" />
+      <PackageReference Include="Microsoft.Extensions.Configuration.FileExtensions" Version="8.0.1" />
+      <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="8.0.1" />
+      <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="8.0.1" />
       <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.11" />
     </ItemGroup>
 

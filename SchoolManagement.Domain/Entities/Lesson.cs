@@ -10,7 +10,7 @@ public class Lesson : BaseEntity
     public Teacher Teacher { get; private set; }
     public DateTime Date { get; private set; }
     public DurationTime DurationTime { get; private set; }
-    public string? Room { get; private set; }
+    public string Room { get; private set; }
     public LessonStatus LessonStatus { get; private set; }
     
     private Lesson() {}

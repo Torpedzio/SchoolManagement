@@ -1,0 +1,25 @@
+﻿services:
+  schoolmanagement.api:
+    image: schoolmanagement.api
+    build:
+      context: .
+      dockerfile: SchoolManagement.API/Dockerfile
+
+  schoolmanagement.application:
+    image: schoolmanagement.application
+    build:
+      context: .
+      dockerfile: SchoolManagement.Application/Dockerfile
+
+  schoolmanagement.domain:
+    image: schoolmanagement.domain
+    build:
+      context: .
+      dockerfile: SchoolManagement.Domain/Dockerfile
+
+  schoolmanagement.infrastructure:
+    image: schoolmanagement.infrastructure
+    build:
+      context: .
+      dockerfile: SchoolManagement.Infrastructure/Dockerfile
+

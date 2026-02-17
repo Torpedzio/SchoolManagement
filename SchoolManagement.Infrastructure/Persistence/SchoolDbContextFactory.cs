@@ -8,12 +8,23 @@ public class SchoolDbContextFactory : IDesignTimeDbContextFactory<SchoolDbContex
 {
     public SchoolDbContext CreateDbContext(string[] args)
     {
+        var environment = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") ?? "Development";
+
+        var configuration = new ConfigurationBuilder()
+            .SetBasePath(Directory.GetCurrentDirectory())
+            .AddJsonFile("appsettings.json", optional: true)
+            .AddJsonFile($"appsettings.{environment}.json", optional: true)
+            .AddUserSecrets<SchoolDbContextFactory>(optional: true)
+            .AddEnvironmentVariables()
+            .Build();
+        
+        var connectionString = configuration.GetConnectionString("DefaultConnection");
+        if (string.IsNullOrWhiteSpace(connectionString))
+            throw new InvalidOperationException("Connection string not found");
+            
         var optionsBuilder = new DbContextOptionsBuilder<SchoolDbContext>();
-        var connectionString =
-            "Host=db.lmnpyswhpjsopjvffrzh.supabase.co;Database=postgres;Username=postgres;Password=[SxNE7nvMXZPJpPKi];SSL Mode=Require;Trust Server Certificate=true";
-        
         optionsBuilder.UseNpgsql(connectionString);
-        
+
         return new SchoolDbContext(optionsBuilder.Options);
     }
 }
