@@ -1,5 +1,6 @@
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using SchoolManagement.Application.Enrollments.Commands.CompleteEnrollment;
 using SchoolManagement.Application.Enrollments.Commands.EnrollStudentToCourse;
 
 namespace SchoolManagement.Controllers;
@@ -20,5 +21,12 @@ public class EnrollmentController : ControllerBase
     {
         var enrollmentId = await _mediator.Send(command);
         return CreatedAtAction(nameof(Enroll),new {id = enrollmentId }, enrollmentId);
+    }
+
+    [HttpPatch("{id}/complete")]
+    public async Task<IActionResult> Complete(int id)
+    {
+        await _mediator.Send(new CompleteEnrollmentCommand(id));
+        return NoContent();
     }
 }

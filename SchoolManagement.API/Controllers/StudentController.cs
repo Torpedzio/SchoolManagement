@@ -4,6 +4,7 @@ using SchoolManagement.Application.Common.Interfaces.Persistence;
 using SchoolManagement.Application.Students.Commands.CreateStudent;
 using SchoolManagement.Application.Students.Commands.DeactiveStudent;
 using SchoolManagement.Application.Students.Queries.GetStudentById;
+using SchoolManagement.Application.Students.Queries.GetStudentDashboard;
 
 namespace SchoolManagement.Controllers;
 
@@ -37,5 +38,12 @@ public class StudentController : ControllerBase
     {
         await _mediator.Send(new DeactiveStudentCommand(id));
         return NoContent();
+    }
+
+    [HttpGet("{id:int}/dashboard")]
+    public async Task<IActionResult> GetDashboard(int id)
+    {
+        var result = await _mediator.Send(new GetStudentDashboardQuery(id));
+        return Ok(result);
     }
 }

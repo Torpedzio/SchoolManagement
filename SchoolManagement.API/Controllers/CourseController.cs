@@ -2,6 +2,7 @@ using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using SchoolManagement.Application.Common.Interfaces.Persistence;
 using SchoolManagement.Application.Courses.Commands.CreateCourse;
+using SchoolManagement.Application.Courses.Queries.GetCourseWithAvailabeSlots;
 
 namespace SchoolManagement.Controllers;
 
@@ -21,5 +22,12 @@ public class CourseController : ControllerBase
     {
         var courseId = await _mediator.Send(command);
         return CreatedAtAction(nameof(Create),new {id = courseId}, courseId);
+    }
+
+    [HttpGet]
+    public async Task<IActionResult> GetAvailableCourses()
+    {
+        var result = await _mediator.Send(new GetCourseWithAvailabeSlotsQuery());
+        return Ok(result);
     }
 }
