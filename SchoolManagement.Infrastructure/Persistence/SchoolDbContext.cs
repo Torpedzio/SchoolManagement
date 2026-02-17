@@ -1,9 +1,10 @@
 using Microsoft.EntityFrameworkCore;
+using SchoolManagement.Application.Common.Interfaces.Persistence;
 using SchoolManagement.Domain.Entities;
 
 namespace SchoolManagement.Infrastructure.Persistence;
 
-public class SchoolDbContext :DbContext
+public class SchoolDbContext :DbContext, IApplicationDbContext
 {
     public SchoolDbContext(DbContextOptions<SchoolDbContext> options) : base(options)
     {

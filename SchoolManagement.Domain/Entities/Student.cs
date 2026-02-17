@@ -68,9 +68,15 @@ public class Student : BaseEntity
     {
         if (string.IsNullOrWhiteSpace(email))
             throw new ArgumentException("Email cannot be null or empty");
-        if (email.Contains("@"))
+        try
+        {
+            var _ = new System.Net.Mail.MailAddress(email);
+        }
+        catch
+        {
             throw new ArgumentException("Email format is invalid");
-        Email = email.Trim().ToLower();
+        }
+        Email = email.Trim().ToLowerInvariant();
     }
 
     private void SetDateOfBirth(DateTime dateOfBirth)
