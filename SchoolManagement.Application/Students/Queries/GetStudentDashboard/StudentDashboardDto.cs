@@ -12,7 +12,7 @@ public record StudentDashboardDto(
     decimal OutstandingPaymentstotal,
     int UnpaidPaymentsCount);
     
-    public record StudentEnrollmentDto(
+public record StudentEnrollmentDto(
         int CourseId,
         string CourseName,
         EnrollmentStatus EnrollmentStatus,

@@ -1,6 +1,5 @@
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using SchoolManagement.Application.Common.Interfaces.Persistence;
 using SchoolManagement.Application.Students.Commands.CreateStudent;
 using SchoolManagement.Application.Students.Commands.DeactiveStudent;
 using SchoolManagement.Application.Students.Queries.GetStudentById;
