@@ -17,14 +17,14 @@ public class CourseController : ControllerBase
         _mediator = mediator;
     }
 
-    [HttpPost]
+    [HttpPost("create")]
     public async Task<IActionResult> Create([FromBody] CreateCourseCommand command)
     {
         var courseId = await _mediator.Send(command);
         return CreatedAtAction(nameof(Create),new {id = courseId}, courseId);
     }
 
-    [HttpGet]
+    [HttpGet("available")]
     public async Task<IActionResult> GetAvailableCourses()
     {
         var result = await _mediator.Send(new GetCourseWithAvailabeSlotsQuery());
