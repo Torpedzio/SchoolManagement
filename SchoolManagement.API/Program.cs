@@ -1,6 +1,7 @@
 using System.Text.Json.Serialization;
-using SchoolManagement.Infrastructure;
 using SchoolManagement.Application;
+using SchoolManagement.Infrastructure;
+using SchoolManagement.Middleware;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,6 +20,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseMiddleware<ExceptionsHandlingMiddleware>();
 
 app.UseHttpsRedirection();
 app.UseAuthorization();
